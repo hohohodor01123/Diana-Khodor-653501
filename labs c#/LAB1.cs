@@ -1,0 +1,34 @@
+using System; 
+namespace LAB1{
+class Program 
+{ 
+static void KhanoiTower(int i,params char[] x) 
+{ 
+if(i==1) 
+{ 
+Console.WriteLine("One disk from "+ x[0].ToString()+" to "+x[1].ToString()); 
+} 
+else 
+{ 
+KhanoiTower(i-1,x[0],x[2],x[1]); 
+Console.WriteLine("One disk from "+ x[0].ToString()+" to "+x[1].ToString()); 
+KhanoiTower(i-1,x[2],x[1],x[0]); 
+
+
+} 
+} 
+static void Main(string[]args) 
+{ 
+Console.WriteLine("Enter the number of disks "); 
+int number=int.Parse(Console.ReadLine()); 
+while (number <= 0) 
+{ 
+Console.WriteLine("Wrong input,try again "); 
+number=int.Parse(Console.ReadLine()); 
+} 
+char x='A',y='B',z='C'; 
+KhanoiTower(number,x,y,z); 
+Console.ReadKey(); 
+} 
+}
+}
