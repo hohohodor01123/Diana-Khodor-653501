@@ -35,7 +35,7 @@ class TemplateQueue
 	//вставляет элемент в начало или в конец списка в зависимости от значения to_start
 	void Push(Node* node, bool to_start)
 	{
-     	if (_length == 0)
+     		if (_length == 0)
 		{
 
 			_end = node;
