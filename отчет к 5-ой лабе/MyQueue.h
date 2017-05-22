@@ -21,7 +21,7 @@ class MyQueue : public TemplateQueue<double>
 	void Swap(Node* node1, Node* node2);
 
 	public:
-	MyQueue() : Queue0<double> () {}
+	MyQueue() : TemplateQueue<double> () {}
 
 	bool SwapBiggestSmallest();
 	bool Contains(double number);
