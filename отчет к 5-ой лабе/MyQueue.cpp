@@ -10,7 +10,7 @@
 #pragma package(smart_init)
 
 
-bool MyQueue::SwapBiggestSmallest()//меняет местами наибольший и наименьший элементы списка
+bool MyQueue::SwapBiggestSmallest()//РјРµРЅСЏРµС‚ РјРµСЃС‚Р°РјРё РЅР°РёР±РѕР»СЊС€РёР№ Рё РЅР°РёРјРµРЅСЊС€РёР№ СЌР»РµРјРµРЅС‚С‹ СЃРїРёСЃРєР°
 {
 	if( _length == 0 )
 	{
@@ -27,7 +27,7 @@ bool MyQueue::SwapBiggestSmallest()//меняет местами наибольший и наименьший элем
 
 }
 
-Node* MyQueue::GetBiggestSmallest()//возвращает наибольший или наименьший элемент списка в зависимости от того, на какой метод сравнения указывает указатель comp_func
+Node* MyQueue::GetBiggestSmallest()//РІРѕР·РІСЂР°С‰Р°РµС‚ РЅР°РёР±РѕР»СЊС€РёР№ РёР»Рё РЅР°РёРјРµРЅСЊС€РёР№ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РѕРіРѕ, РЅР° РєР°РєРѕР№ РјРµС‚РѕРґ СЃСЂР°РІРЅРµРЅРёСЏ СѓРєР°Р·С‹РІР°РµС‚ СѓРєР°Р·Р°С‚РµР»СЊ comp_func
 {
 	if( _length != 0 )
 	{
@@ -49,8 +49,7 @@ Node* MyQueue::GetBiggestSmallest()//возвращает наибольший или наименьший элемен
 	return NULL;
 }
 
-void MyQueue::Swap(Node* node1, Node* node2)//меняет местами элементы node1 и node2, используя исключительно изменение значений указателей previous и next в некоторых элементах списка
-{
+void MyQueue::Swap(Node* node1, Node* node2)//РјРµРЅСЏРµС‚ РјРµСЃС‚Р°РјРё СЌР»РµРјРµРЅС‚С‹ node1 Рё node2, РёСЃРїРѕР»СЊР·СѓСЏ РёСЃРєР»СЋС‡РёС‚РµР»СЊРЅРѕ РёР·РјРµРЅРµРЅРёРµ Р·РЅР°С‡РµРЅРёР№ СѓРєР°Р·Р°С‚РµР»РµР№ previous Рё next РІ РЅРµРєРѕС‚РѕСЂС‹С… СЌР»РµРјРµРЅС‚Р°С… СЃРїРёСЃРєР°{
 	if (node1 == node2)
 	{
 		return;
@@ -107,7 +106,7 @@ void MyQueue::Swap(Node* node1, Node* node2)//меняет местами элементы node1 и no
 }
 
 
-bool MyQueue::Bigger(Node* node1, Node* node2)//возвращает true, если node1 > node2
+bool MyQueue::Bigger(Node* node1, Node* node2)//ГўГ®Г§ГўГ°Г Г№Г ГҐГІ true, ГҐГ±Г«ГЁ node1 > node2
 {
 	if(node1 -> info > node2 -> info)
 	{
@@ -117,7 +116,7 @@ bool MyQueue::Bigger(Node* node1, Node* node2)//возвращает true, если node1 > no
 	return false;
 }
 
-bool MyQueue::Smaller(Node* node1, Node* node2)//возвращает true, если node1 < node2
+bool MyQueue::Smaller(Node* node1, Node* node2)//ГўГ®Г§ГўГ°Г Г№Г ГҐГІ true, ГҐГ±Г«ГЁ node1 < node2
 {
 	if(node1 -> info < node2 -> info)
 	{
@@ -127,7 +126,7 @@ bool MyQueue::Smaller(Node* node1, Node* node2)//возвращает true, если node1 < n
 	return false;
 }
 
-bool MyQueue::Contains(double number)//возвращает true, если элемент со значением number уже содержится в списке
+bool MyQueue::Contains(double number)//ГўГ®Г§ГўГ°Г Г№Г ГҐГІ true, ГҐГ±Г«ГЁ ГЅГ«ГҐГ¬ГҐГ­ГІ Г±Г® Г§Г­Г Г·ГҐГ­ГЁГҐГ¬ number ГіГ¦ГҐ Г±Г®Г¤ГҐГ°Г¦ГЁГІГ±Гї Гў Г±ГЇГЁГ±ГЄГҐ
 {
 	Node* slider = _start;
 	for(int i = 0; i < _length; i++)
