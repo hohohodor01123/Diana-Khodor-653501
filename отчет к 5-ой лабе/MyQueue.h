@@ -6,7 +6,7 @@
 #include "TemplateQueue.h"
 
 
-
+//класс, представляющий список с информационным полем double в каждом элементе
 class MyQueue : public TemplateQueue<double>
 {
 	private:
