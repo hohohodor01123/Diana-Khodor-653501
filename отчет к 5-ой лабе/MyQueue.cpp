@@ -116,12 +116,12 @@ void MyQueue::Swap(Node* node1, Node* node2)
 
 bool MyQueue::Bigger(Node* node1, Node* node2)//возвращает true, если node1 > node2
 {
-	return node1 -> info > node2 -> info ? true : false;
+	return node1 -> info > node2 -> info;
 }
 
 bool MyQueue::Smaller(Node* node1, Node* node2)//возвращает true, если node1 < node2
 {
-	return node1 -> info < node2 -> info ? true : false; 
+	return node1 -> info < node2 -> info;
 }
 
 bool MyQueue::Contains(double number)//возвращает true, если элемент со значением number уже содержится в списке
