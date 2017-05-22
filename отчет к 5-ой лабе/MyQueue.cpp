@@ -9,8 +9,8 @@
 
 #pragma package(smart_init)
 
-
-bool MyQueue::SwapBiggestSmallest()//меняет местами наибольший и наименьший элементы списка
+//меняет местами наибольший и наименьший элементы списка
+bool MyQueue::SwapBiggestSmallest()
 {
 	if( _length == 0 )
 	{
@@ -27,7 +27,10 @@ bool MyQueue::SwapBiggestSmallest()//меняет местами наиболь�
 
 }
 
-Node* MyQueue::GetBiggestSmallest()//возвращает наибольший или наименьший элемент списка в зависимости от того, на какой метод сравнения указывает указатель comp_func
+
+/*возвращает наибольший или наименьший элемент списка в зависимости от того, на какой метод сравнения 
+указывает указатель comp_func*/
+Node* MyQueue::GetBiggestSmallest()
 {
 	if( _length != 0 )
 	{
@@ -49,7 +52,12 @@ Node* MyQueue::GetBiggestSmallest()//возвращает наибольший �
 	return NULL;
 }
 
-void MyQueue::Swap(Node* node1, Node* node2)//меняет местами элементы node1 и node2, используя исключительно изменение значений указателей previous и next в некоторых элементах списка{
+
+
+/*меняет местами элементы node1 и node2, используя исключительно изменение значений указателей previous и next 
+в некоторых элементах списка*/
+void MyQueue::Swap(Node* node1, Node* node2)
+{
 	if (node1 == node2)
 	{
 		return;
@@ -106,8 +114,7 @@ void MyQueue::Swap(Node* node1, Node* node2)//меняет местами эле
 }
 
 
-bool MyQueue::Bigger(Node* node1, Node* node2)//âîçâðàùàåò true, åñëè node1 > node2
-{
+bool MyQueue::Bigger(Node* node1, Node* node2)//возвращает true, если node1 > node2
 	if(node1 -> info > node2 -> info)
 	{
 		return true;
@@ -116,7 +123,7 @@ bool MyQueue::Bigger(Node* node1, Node* node2)//âîçâðàùàåò true, åñ�
 	return false;
 }
 
-bool MyQueue::Smaller(Node* node1, Node* node2)//âîçâðàùàåò true, åñëè node1 < node2
+bool MyQueue::Smaller(Node* node1, Node* node2)//возвращает true, если node1 < node2
 {
 	if(node1 -> info < node2 -> info)
 	{
@@ -126,7 +133,7 @@ bool MyQueue::Smaller(Node* node1, Node* node2)//âîçâðàùàåò true, åñ
 	return false;
 }
 
-bool MyQueue::Contains(double number)//âîçâðàùàåò true, åñëè ýëåìåíò ñî çíà÷åíèåì number óæå ñîäåðæèòñÿ â ñïèñêå
+bool MyQueue::Contains(double number)//возвращает true, если элемент со значением number уже содержится в списке
 {
 	Node* slider = _start;
 	for(int i = 0; i < _length; i++)
