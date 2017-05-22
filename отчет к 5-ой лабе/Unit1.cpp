@@ -49,9 +49,9 @@ void __fastcall TForm1::AddButtonClick(TObject *Sender)
 		queue -> Show( ListStringGrid );
 	}
 	else
-   {
-	  ShowMessage("The queue already contains the element you want to add");
-   }
+   	{
+		ShowMessage("The queue already contains the element you want to add");
+   	}
 }
 //---------------------------------------------------------------------------
 
@@ -65,8 +65,8 @@ void __fastcall TForm1::DeleteButtonClick(TObject *Sender)
 	}
 	catch(std::logic_error& e)
 	{
-        ShowMessage(e.what());
-    }
+        	ShowMessage(e.what());
+    	}
 }
 //---------------------------------------------------------------------------
 
@@ -79,8 +79,8 @@ void __fastcall TForm1::SwapButtonClick(TObject *Sender)
 	}
 	else
 	{
-        queue -> Show( ListStringGrid );
-    }
+        	queue -> Show( ListStringGrid );
+    	}
 
 }
 //---------------------------------------------------------------------------
