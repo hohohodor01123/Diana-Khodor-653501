@@ -6,23 +6,31 @@
 #include "Unit1.h"
 #include "MyQueue.h"
 //---------------------------------------------------------------------------
+
+
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
 MyQueue* queue;
 //---------------------------------------------------------------------------
+
+
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormCreate(TObject *Sender)//ñîçäàåò ïóñòîé îáúåêò òèïà ñïèñîê è âûâîäèò ñëîâî "Elements" â ïåðâîé ñòðîêå òàáëèöû
+
+//ÑÐ¾Ð·Ð´Ð°ÐµÑ‚ Ð¿ÑƒÑÑ‚Ð¾Ð¹ Ð¾Ð±ÑŠÐµÐºÑ‚ Ñ‚Ð¸Ð¿Ð° ÑÐ¿Ð¸ÑÐ¾Ðº Ð¸ Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ ÑÐ»Ð¾Ð²Ð¾ "Elements" Ð² Ð¿ÐµÑ€Ð²Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐµ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹
+void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	ListStringGrid -> Cells[0][0] = "Elements";
 	queue = new MyQueue();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::AddButtonClick(TObject *Sender)//îáðàáîò÷èê íàæàòèÿ íà êíîïêó Add,äîáàâëÿåò ââåäåííûé ýëåìåíò â êîíåö ñïèñêà, åñëè îí åùå íå äîáàâëåí è âûâîäèò åãî â òàáëèöó
+
+//Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ñ Ð½Ð° ÐºÐ½Ð¾Ð¿ÐºÑƒ Add,Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð² ÐºÐ¾Ð½ÐµÑ† ÑÐ¿Ð¸ÑÐºÐ°, ÐµÑÐ»Ð¸ Ð¾Ð½ ÐµÑ‰Ðµ Ð½Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ Ð¸ Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ ÐµÐ³Ð¾ Ð² Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ
+void __fastcall TForm1::AddButtonClick(TObject *Sender)
 {
 	float element = 0;
 	try
@@ -46,7 +54,9 @@ void __fastcall TForm1::AddButtonClick(TObject *Sender)//îáðàáîò÷èê íàæàòèÿ íà ê
    }
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::DeleteButtonClick(TObject *Sender)//îáðàáîò÷èê íàæàòèÿ êíîïêè Delete,óäàëÿåò ïåðâûé ýëåìåíò èç ñïèñêà, åñëè îí íå ïóñò
+
+//Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ñ ÐºÐ½Ð¾Ð¿ÐºÐ¸ Delete,ÑƒÐ´Ð°Ð»ÑÐµÑ‚ Ð¿ÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¸Ð· ÑÐ¿Ð¸ÑÐºÐ°, ÐµÑÐ»Ð¸ Ð¾Ð½ Ð½Ðµ Ð¿ÑƒÑÑ‚
+void __fastcall TForm1::DeleteButtonClick(TObject *Sender)
 {
 	try
 	{
@@ -58,8 +68,10 @@ void __fastcall TForm1::DeleteButtonClick(TObject *Sender)//îáðàáîò÷èê íàæàòèÿ ê
         ShowMessage(e.what());
     }
 }
+//---------------------------------------------------------------------------
 
-void __fastcall TForm1::SwapButtonClick(TObject *Sender)//îáðàáîò÷èê íàæàòèÿ êíîïêè Swap biggest and smallest, ìåíÿåò ìåñòàìè íàèáîëüøèé è íàèìåíüøèé ýëåìåíòû ñïèñêà
+//Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ñ ÐºÐ½Ð¾Ð¿ÐºÐ¸ Swap biggest and smallest, Ð¼ÐµÐ½ÑÐµÑ‚ Ð¼ÐµÑÑ‚Ð°Ð¼Ð¸ Ð½Ð°Ð¸Ð±Ð¾Ð»ÑŒÑˆÐ¸Ð¹ Ð¸ Ð½Ð°Ð¸Ð¼ÐµÐ½ÑŒÑˆÐ¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÑÐ¿Ð¸ÑÐºÐ°
+void __fastcall TForm1::SwapButtonClick(TObject *Sender)
 {
 	if( !queue -> SwapBiggestSmallest() )
 	{
@@ -72,7 +84,9 @@ void __fastcall TForm1::SwapButtonClick(TObject *Sender)//îáðàáîò÷èê íàæàòèÿ êíî
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::CloseButtonClick(TObject *Sender)//îáðàáîò÷èê íàæàòèÿ êíîïêè Close, âûçûâàåòñÿ äåñòðóêòîð äëÿ ñïèñêà
+
+//Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ñ ÐºÐ½Ð¾Ð¿ÐºÐ¸ Close, Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ÑÑ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð´Ð»Ñ ÑÐ¿Ð¸ÑÐºÐ°
+void __fastcall TForm1::CloseButtonClick(TObject *Sender)
 {
 	delete queue;
 	Form1 -> Close();
